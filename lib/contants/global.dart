@@ -6,6 +6,7 @@ class AppImages {
   static const String loginImage = "images/login_vector.png";
   static const String googleLogo = "images/google_icon.png";
   static const String facebookLogo = "images/facebook_icon.png";
+  static const String defaultThumbnail = "images/thumbnail_default.png";
 }
 
 double getScreenWidth(BuildContext context) {

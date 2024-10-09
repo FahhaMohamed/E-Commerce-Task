@@ -2,6 +2,7 @@ import 'package:e_commerce_task/views/auth/widgets/custom_auth_button.dart';
 import 'package:e_commerce_task/views/auth/widgets/custom_divider.dart';
 import 'package:e_commerce_task/views/auth/widgets/custom_text_field.dart';
 import 'package:e_commerce_task/views/auth/widgets/social_medias_widget.dart';
+import 'package:e_commerce_task/views/home/home_page.dart';
 import 'package:flutter/material.dart';
 
 class LoginForm extends StatefulWidget {
@@ -27,10 +28,15 @@ class _LoginFormState extends State<LoginForm> {
           ),
           CustomAuthButton(
             title: 'Log in',
-            onTap: () {},
+            onTap: () {
+              Navigator.of(context)
+                  .push(MaterialPageRoute(builder: (_) => const HomePage()));
+            },
           ),
           //separate the social media auth
-          const CustomDivider(title: "log in",),
+          const CustomDivider(
+            title: "log in",
+          ),
 
           //add google & facebook
           SocialMediasWidget(
