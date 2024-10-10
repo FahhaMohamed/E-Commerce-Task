@@ -1,5 +1,7 @@
 import 'package:e_commerce_task/contants/colors.dart';
+import 'package:e_commerce_task/controllers/product_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class SearchWidget extends StatefulWidget {
   const SearchWidget({super.key});
@@ -9,7 +11,8 @@ class SearchWidget extends StatefulWidget {
 }
 
 class _SearchWidgetState extends State<SearchWidget> {
-  bool isSearch = false;
+  final ProductController productController = Get.put(ProductController());
+  final TextEditingController searchController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -27,16 +30,11 @@ class _SearchWidgetState extends State<SearchWidget> {
         ),
       ),
       child: TextFormField(
-        onTap: () {
-          setState(() {
-            isSearch = true;
-          });
+        controller: searchController,
+        onChanged: (value) {
+          productController.filterProducts(value);
         },
-        onTapOutside: (val) {
-          setState(() {
-            isSearch = false;
-          });
-        },
+        onTapOutside: (val) => FocusScope.of(context).unfocus(),
         cursorHeight: 17,
         cursorColor: Colors.black,
         style: const TextStyle(

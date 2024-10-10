@@ -1,6 +1,7 @@
 import 'package:e_commerce_task/controllers/product_controller.dart';
 import 'package:e_commerce_task/views/detail/detail_page.dart';
 import 'package:e_commerce_task/views/home/widgets/item_widget.dart';
+import 'package:e_commerce_task/widgets/home_shimmer.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -15,15 +16,15 @@ class ItemListWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Obx(() {
       if (productController.isLoading.value) {
-        return const Center(
-          child: CircularProgressIndicator(),
-        );
+        return homeShimmer(context);
       }
+
+      var filterProduct = productController.filteredProductList;
       return Expanded(
         child: GridView.builder(
           shrinkWrap: true,
           physics: const AlwaysScrollableScrollPhysics(),
-          itemCount: productController.productList.length,
+          itemCount: filterProduct.length,
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2,
             crossAxisSpacing: 10,
@@ -31,7 +32,7 @@ class ItemListWidget extends StatelessWidget {
             childAspectRatio: .8,
           ),
           itemBuilder: (context, index) {
-            var product = productController.productList[index];
+            var product = filterProduct[index];
             return GestureDetector(
                 onTap: () => Navigator.of(context).push(MaterialPageRoute(
                     builder: (_) => DetailPage(

@@ -1,6 +1,7 @@
-import 'package:e_commerce_task/views/home/widgets/category_list.dart';
+import 'package:e_commerce_task/contants/colors.dart';
 import 'package:e_commerce_task/views/home/widgets/items_list_widget.dart';
 import 'package:e_commerce_task/views/home/widgets/search_widget.dart';
+import 'package:e_commerce_task/views/home/widgets/sign_out_widget.dart';
 import 'package:e_commerce_task/widgets/text_widget.dart';
 import 'package:flutter/material.dart';
 
@@ -23,13 +24,29 @@ class _HomePageState extends State<HomePage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            subTextBold(text: "Find your items"),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                subTextBold(text: "Find your items"),
+                IconButton(
+                    onPressed: () {
+                      showDialog(
+                          context: context,
+                          builder: (context) => SignOutWidget());
+                    },
+                    icon: const Icon(
+                      Icons.logout,
+                      color: AppColor.buttonColor,
+                    ))
+              ],
+            ),
 
             //search functionality
             const SearchWidget(),
 
-            //category horizontal list
-            CategoryList(isSelect: isSelect),
+            const SizedBox(
+              height: 10,
+            ),
 
             subTextBold(text: "Items"),
 

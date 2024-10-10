@@ -1,5 +1,7 @@
 import 'package:e_commerce_task/utils/firebase_auth_exception_handler.dart';
+import 'package:e_commerce_task/views/auth/logIn/login_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 import 'package:get/get.dart';
 import 'package:google_sign_in/google_sign_in.dart';
@@ -108,8 +110,10 @@ class AuthService {
   //----------------------------------------------------------------------------------------------------
 
   //sign out
-  Future<void> signOut() async {
+  Future<void> signOut(BuildContext context) async {
     await _auth.signOut();
+    Navigator.of(context)
+        .pushReplacement(MaterialPageRoute(builder: (_) => const LoginPage()));
     Get.snackbar('Success', 'You successfully sign out.');
   }
 }
