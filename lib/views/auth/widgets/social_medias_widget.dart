@@ -1,24 +1,41 @@
 import 'package:e_commerce_task/contants/global.dart';
+import 'package:e_commerce_task/services/auth_service.dart';
+import 'package:e_commerce_task/utils/loading_indicate.dart';
+import 'package:e_commerce_task/views/home/home_page.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class SocialMediasWidget extends StatelessWidget {
-  final VoidCallback googleTap;
-  final VoidCallback facebookTap;
+  final String title;
   const SocialMediasWidget({
     super.key,
-    required this.googleTap,
-    required this.facebookTap,
+    required this.title,
   });
 
   @override
   Widget build(BuildContext context) {
+    final AuthService _auth = AuthService();
+
     double width = getScreenWidth(context);
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         //google
         GestureDetector(
-          onTap: googleTap,
+          onTap: () async {
+            showLoadingDialog(context, title);
+
+            User? user = await _auth.signInWithGoogle();
+
+            hideLoadingDialog(context);
+
+            if (user != null) {
+              Navigator.of(context).pushReplacement(
+                  MaterialPageRoute(builder: (_) => const HomePage()));
+              Get.snackbar('Success', 'You successfully login.');
+            }
+          },
           child: Container(
             margin: const EdgeInsets.symmetric(vertical: 20),
             decoration: BoxDecoration(
@@ -33,7 +50,19 @@ class SocialMediasWidget extends StatelessWidget {
         ),
         //facebook
         GestureDetector(
-          onTap: facebookTap,
+          onTap: () async {
+            showLoadingDialog(context, title);
+
+            User? user = await _auth.signInWithFacebook();
+
+            hideLoadingDialog(context);
+
+            if (user != null) {
+              Navigator.of(context).pushReplacement(
+                  MaterialPageRoute(builder: (_) => const HomePage()));
+              Get.snackbar('Success', 'You successfully login.');
+            }
+          },
           child: Container(
             margin: const EdgeInsets.symmetric(vertical: 20),
             padding: const EdgeInsets.all(7.5),

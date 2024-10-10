@@ -46,7 +46,7 @@ class _SignUpPageState extends State<SignUpPage> {
                   title: "Already have an account",
                   pageTitle: "Log in",
                   onTap: () => Navigator.pop(context),
-                )
+                ),
               ],
             ),
           ),

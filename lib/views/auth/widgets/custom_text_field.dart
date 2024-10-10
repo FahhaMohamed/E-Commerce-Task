@@ -3,9 +3,14 @@ import 'package:flutter/material.dart';
 // ignore: must_be_immutable
 class CustomTextField extends StatelessWidget {
   final String hintText;
+  final TextEditingController controller;
   bool isPassword;
 
-  CustomTextField({super.key, required this.hintText, this.isPassword = false});
+  CustomTextField(
+      {super.key,
+      required this.hintText,
+      this.isPassword = false,
+      required this.controller});
 
   @override
   Widget build(BuildContext context) {
@@ -18,6 +23,8 @@ class CustomTextField extends StatelessWidget {
           borderRadius: BorderRadius.circular(5),
           border: Border.all(color: const Color.fromARGB(255, 224, 224, 224))),
       child: TextFormField(
+        onTapOutside: (event) => FocusScope.of(context).unfocus(),
+        controller: controller,
         keyboardType: isPassword
             ? TextInputType.visiblePassword
             : TextInputType.emailAddress,

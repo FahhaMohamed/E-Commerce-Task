@@ -42,6 +42,8 @@ class _LoginPageState extends State<LoginPage> {
                   width: w,
                 ),
 
+                
+
                 //back to login
                 AuthNavigateWidget(
                   title: "Don't have an account",
