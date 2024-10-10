@@ -1,11 +1,15 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:e_commerce_task/contants/colors.dart';
+import 'package:e_commerce_task/contants/global.dart';
 import 'package:e_commerce_task/views/detail/widgets/image_widget.dart';
+import 'package:e_commerce_task/widgets/carousal_shimmer.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class CarousalWidget extends StatefulWidget {
-  const CarousalWidget({super.key});
+  final List images;
+  const CarousalWidget({super.key, required this.images});
 
   @override
   State<CarousalWidget> createState() => _CarousalWidgetState();
@@ -17,18 +21,24 @@ class _CarousalWidgetState extends State<CarousalWidget> {
 
   @override
   Widget build(BuildContext context) {
+    double w = getScreenWidth(context);
     return Column(
       children: [
         CarouselSlider(
-          items: [1, 2, 3, 4, 5].map((i) {
-            return const ImageWidget();
+          items: widget.images.map((image) {
+            return CachedNetworkImage(
+              width: w * .6,
+              imageUrl: image,
+              placeholder: (context, url) => carousalShimmer(context),
+              errorWidget: (context, url, error) => const ImageWidget(),
+            );
           }).toList(),
           carouselController: _controller,
           options: CarouselOptions(
             height: 300.0,
-            autoPlay: true,
+            autoPlay: false,
             enlargeCenterPage: true,
-            enableInfiniteScroll: true,
+            enableInfiniteScroll: widget.images.length == 1 ? false : true,
             onPageChanged: (index, reason) {
               setState(() {
                 _currentIndex = index;
@@ -39,7 +49,7 @@ class _CarousalWidgetState extends State<CarousalWidget> {
         const SizedBox(height: 5),
         AnimatedSmoothIndicator(
           activeIndex: _currentIndex,
-          count: 5,
+          count: widget.images.length,
           effect: const WormEffect(
             dotHeight: 9,
             dotWidth: 9,

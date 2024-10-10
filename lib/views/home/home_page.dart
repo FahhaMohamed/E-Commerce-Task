@@ -38,7 +38,7 @@ class _HomePageState extends State<HomePage> {
             ),
 
             //add list of items
-            const ItemListWidget()
+            ItemListWidget()
           ],
         ),
       )),

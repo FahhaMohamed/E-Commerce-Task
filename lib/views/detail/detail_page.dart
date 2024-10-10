@@ -1,11 +1,13 @@
 import 'package:e_commerce_task/contants/colors.dart';
+import 'package:e_commerce_task/models/product_model.dart';
 import 'package:e_commerce_task/views/detail/widgets/carosal_widget.dart';
 import 'package:e_commerce_task/views/detail/widgets/rating_widget.dart';
 import 'package:e_commerce_task/widgets/text_widget.dart';
 import 'package:flutter/material.dart';
 
 class DetailPage extends StatefulWidget {
-  const DetailPage({super.key});
+  final Product product;
+  const DetailPage({super.key, required this.product});
 
   @override
   State<DetailPage> createState() => _DetailPageState();
@@ -40,15 +42,17 @@ class _DetailPageState extends State<DetailPage> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const CarousalWidget(),
+                CarousalWidget(
+                  images: widget.product.images,
+                ),
                 const SizedBox(height: 20),
 
                 // Product Name and Price
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    itemNameText(text: "Product Name"),
-                    priceText(price: "Rs. 2200"),
+                    itemNameText(text: widget.product.title),
+                    priceText(price: '\$ ${widget.product.price}'),
                   ],
                 ),
                 const SizedBox(height: 10),
@@ -57,8 +61,10 @@ class _DetailPageState extends State<DetailPage> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    brandNameText(text: "Brand Name"),
-                    const CustomRatingWidget(),
+                    brandNameText(text: widget.product.brand),
+                    CustomRatingWidget(
+                      rating: widget.product.rating,
+                    ),
                   ],
                 ),
                 const SizedBox(height: 20),
@@ -73,13 +79,11 @@ class _DetailPageState extends State<DetailPage> {
                   ),
                 ),
                 const SizedBox(height: 10),
-                const Text(
-                  "This is a detailed description of the product. It includes all the key features and details that make this product special. You can provide more information here about its benefits, material, size, and other important attributes.",
-                  style: TextStyle(fontSize: 14, height: 1.5),
+                Text(
+                  widget.product.description,
+                  style: const TextStyle(fontSize: 14, height: 1.5),
                 ),
                 const SizedBox(height: 20),
-
-                // Add more sections like reviews, similar products, etc. if needed
               ],
             ),
           ),

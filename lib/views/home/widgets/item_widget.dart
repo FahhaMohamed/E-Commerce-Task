@@ -1,11 +1,22 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:e_commerce_task/contants/colors.dart';
 import 'package:e_commerce_task/contants/global.dart';
+import 'package:e_commerce_task/widgets/item_default_image.dart';
+import 'package:e_commerce_task/widgets/item_shimmer.dart';
 import 'package:e_commerce_task/widgets/text_widget.dart';
 import 'package:flutter/material.dart';
 
 class ItemWidget extends StatelessWidget {
+  final String title;
+  final String brand;
+  final String thumbnail;
+  final double price;
   const ItemWidget({
     super.key,
+    required this.title,
+    required this.brand,
+    required this.price,
+    required this.thumbnail,
   });
 
   @override
@@ -22,23 +33,24 @@ class ItemWidget extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
+            alignment: Alignment.center,
             decoration: BoxDecoration(
               color: AppColor.backgroundColor,
               borderRadius: BorderRadius.circular(8),
             ),
-            child: Image.asset(
-              AppImages.defaultThumbnail,
-              fit: BoxFit.contain,
+            child: CachedNetworkImage(
               height: 100,
-              width: double.infinity,
+              imageUrl: thumbnail,
+              placeholder: (context, url) => itemShimmer(context),
+              errorWidget: (context, url, error) => const ItemDefaultImage(),
             ),
           ),
           const SizedBox(height: 8),
-          itemNameText(text: "Product Name"),
+          itemNameText(text: title),
           const SizedBox(height: 4),
-          brandNameText(text: "Brand Name"),
+          brandNameText(text: brand),
           const SizedBox(height: 4),
-          priceText(price: "Rs. 2200"),
+          priceText(price: "\$ $price"),
         ],
       ),
     );

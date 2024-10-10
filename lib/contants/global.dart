@@ -1,6 +1,8 @@
 import 'package:e_commerce_task/contants/colors.dart';
 import 'package:flutter/material.dart';
 
+const String apiUrl = "https://dummyjson.com/products";
+
 class AppImages {
   static const String signUpImage = "images/signUp_vector.png";
   static const String loginImage = "images/login_vector.png";
@@ -14,4 +16,4 @@ double getScreenWidth(BuildContext context) {
 }
 
 const BoxShadow shadowStyle =
-     BoxShadow(color: AppColor.shadowColor, offset: Offset(0, 3), blurRadius: 5);
+    BoxShadow(color: AppColor.shadowColor, offset: Offset(0, 3), blurRadius: 5);

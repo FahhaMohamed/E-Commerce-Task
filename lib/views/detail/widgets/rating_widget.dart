@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
 class CustomRatingWidget extends StatelessWidget {
+  final double rating;
   const CustomRatingWidget({
-    super.key,
+    super.key, required this.rating,
   });
 
   @override
@@ -11,7 +12,7 @@ class CustomRatingWidget extends StatelessWidget {
     return Row(
       children: [
         RatingBarIndicator(
-          rating: 4.96,
+          rating: rating,
           itemBuilder: (context, index) => const Icon(
             Icons.star,
             color: Colors.amber,
@@ -21,9 +22,9 @@ class CustomRatingWidget extends StatelessWidget {
           direction: Axis.horizontal,
         ),
         const SizedBox(width: 5),
-        const Text(
-          "4.96",
-          style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+        Text(
+          "$rating",
+          style: const TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
         ),
       ],
     );
