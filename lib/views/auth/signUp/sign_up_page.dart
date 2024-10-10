@@ -1,8 +1,8 @@
-import 'package:e_commerce_task/contants/colors.dart';
-import 'package:e_commerce_task/contants/global.dart';
+import 'package:e_commerce_task/core/contants/colors.dart';
+import 'package:e_commerce_task/core/contants/global.dart';
 import 'package:e_commerce_task/views/auth/widgets/auth_nav_widget.dart';
 import 'package:e_commerce_task/views/auth/widgets/sign_up_form.dart';
-import 'package:e_commerce_task/widgets/text_widget.dart';
+import 'package:e_commerce_task/core/utils/text_styles.dart';
 import 'package:flutter/material.dart';
 
 class SignUpPage extends StatefulWidget {

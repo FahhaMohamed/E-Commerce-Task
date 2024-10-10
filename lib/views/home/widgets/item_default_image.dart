@@ -1,4 +1,4 @@
-import 'package:e_commerce_task/contants/global.dart';
+import 'package:e_commerce_task/core/contants/global.dart';
 import 'package:flutter/material.dart';
 
 class ItemDefaultImage extends StatelessWidget {

@@ -1,8 +1,8 @@
-import 'package:e_commerce_task/contants/colors.dart';
+import 'package:e_commerce_task/core/contants/colors.dart';
 import 'package:e_commerce_task/views/home/widgets/items_list_widget.dart';
 import 'package:e_commerce_task/views/home/widgets/search_widget.dart';
 import 'package:e_commerce_task/views/home/widgets/sign_out_widget.dart';
-import 'package:e_commerce_task/widgets/text_widget.dart';
+import 'package:e_commerce_task/core/utils/text_styles.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {

@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:e_commerce_task/contants/global.dart';
+import 'package:e_commerce_task/core/contants/global.dart';
 import 'package:e_commerce_task/models/product_model.dart';
 import 'package:http/http.dart' as http;
 

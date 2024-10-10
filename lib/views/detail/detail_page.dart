@@ -1,8 +1,8 @@
-import 'package:e_commerce_task/contants/colors.dart';
+import 'package:e_commerce_task/core/contants/colors.dart';
 import 'package:e_commerce_task/models/product_model.dart';
 import 'package:e_commerce_task/views/detail/widgets/carosal_widget.dart';
 import 'package:e_commerce_task/views/detail/widgets/rating_widget.dart';
-import 'package:e_commerce_task/widgets/text_widget.dart';
+import 'package:e_commerce_task/core/utils/text_styles.dart';
 import 'package:flutter/material.dart';
 
 class DetailPage extends StatefulWidget {

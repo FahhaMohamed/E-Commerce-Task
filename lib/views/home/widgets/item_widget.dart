@@ -1,9 +1,9 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:e_commerce_task/contants/colors.dart';
-import 'package:e_commerce_task/contants/global.dart';
-import 'package:e_commerce_task/widgets/item_default_image.dart';
-import 'package:e_commerce_task/widgets/item_shimmer.dart';
-import 'package:e_commerce_task/widgets/text_widget.dart';
+import 'package:e_commerce_task/core/contants/colors.dart';
+import 'package:e_commerce_task/core/contants/global.dart';
+import 'package:e_commerce_task/views/home/widgets/item_default_image.dart';
+import 'package:e_commerce_task/views/home/widgets/item_shimmer.dart';
+import 'package:e_commerce_task/core/utils/text_styles.dart';
 import 'package:flutter/material.dart';
 
 class ItemWidget extends StatelessWidget {

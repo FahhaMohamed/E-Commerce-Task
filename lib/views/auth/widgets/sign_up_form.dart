@@ -1,6 +1,6 @@
 import 'package:e_commerce_task/services/auth_service.dart';
-import 'package:e_commerce_task/utils/loading_indicate.dart';
-import 'package:e_commerce_task/utils/validator.dart';
+import 'package:e_commerce_task/core/utils/loading_indicate.dart';
+import 'package:e_commerce_task/core/utils/validator.dart';
 import 'package:e_commerce_task/views/auth/widgets/custom_auth_button.dart';
 import 'package:e_commerce_task/views/auth/widgets/custom_divider.dart';
 import 'package:e_commerce_task/views/auth/widgets/custom_text_field.dart';

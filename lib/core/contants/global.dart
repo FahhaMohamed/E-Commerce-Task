@@ -1,4 +1,4 @@
-import 'package:e_commerce_task/contants/colors.dart';
+import 'package:e_commerce_task/core/contants/colors.dart';
 import 'package:flutter/material.dart';
 
 const String apiUrl = "https://dummyjson.com/products";

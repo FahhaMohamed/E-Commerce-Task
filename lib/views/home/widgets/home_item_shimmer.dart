@@ -1,5 +1,5 @@
-import 'package:e_commerce_task/contants/colors.dart';
-import 'package:e_commerce_task/contants/global.dart';
+import 'package:e_commerce_task/core/contants/colors.dart';
+import 'package:e_commerce_task/core/contants/global.dart';
 import 'package:flutter/material.dart';
 import 'package:shimmer/shimmer.dart';
 

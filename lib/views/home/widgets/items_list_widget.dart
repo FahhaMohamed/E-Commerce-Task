@@ -1,7 +1,7 @@
 import 'package:e_commerce_task/controllers/product_controller.dart';
 import 'package:e_commerce_task/views/detail/detail_page.dart';
 import 'package:e_commerce_task/views/home/widgets/item_widget.dart';
-import 'package:e_commerce_task/widgets/home_shimmer.dart';
+import 'package:e_commerce_task/views/home/widgets/home_shimmer.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

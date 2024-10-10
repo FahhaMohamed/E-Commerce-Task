@@ -1,8 +1,10 @@
-import 'package:e_commerce_task/contants/colors.dart';
+import 'package:e_commerce_task/core/contants/colors.dart';
+import 'package:e_commerce_task/core/contants/global.dart';
 import 'package:flutter/material.dart';
 import 'package:shimmer/shimmer.dart';
 
-Widget itemShimmer(BuildContext context) {
+Widget carousalShimmer(BuildContext context) {
+  double w = getScreenWidth(context);
   return Shimmer.fromColors(
       baseColor: AppColor.backgroundColor,
       highlightColor: AppColor.shadowColor.withOpacity(.5),
@@ -11,6 +13,6 @@ Widget itemShimmer(BuildContext context) {
           color: AppColor.backgroundColor,
           borderRadius: BorderRadius.circular(5),
         ),
-        height: 100,
+        width: w * .6,
       ));
 }

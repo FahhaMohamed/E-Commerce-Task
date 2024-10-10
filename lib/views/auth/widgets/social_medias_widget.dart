@@ -1,6 +1,6 @@
-import 'package:e_commerce_task/contants/global.dart';
+import 'package:e_commerce_task/core/contants/global.dart';
 import 'package:e_commerce_task/services/auth_service.dart';
-import 'package:e_commerce_task/utils/loading_indicate.dart';
+import 'package:e_commerce_task/core/utils/loading_indicate.dart';
 import 'package:e_commerce_task/views/home/home_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';

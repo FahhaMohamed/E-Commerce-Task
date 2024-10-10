@@ -1,4 +1,4 @@
-import 'package:e_commerce_task/widgets/home_item_shimmer.dart';
+import 'package:e_commerce_task/views/home/widgets/home_item_shimmer.dart';
 import 'package:flutter/material.dart';
 
 Widget homeShimmer(BuildContext context) {

@@ -1,4 +1,4 @@
-import 'package:e_commerce_task/contants/colors.dart';
+import 'package:e_commerce_task/core/contants/colors.dart';
 import 'package:e_commerce_task/controllers/product_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

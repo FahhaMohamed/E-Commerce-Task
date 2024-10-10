@@ -1,5 +1,5 @@
-import 'package:e_commerce_task/contants/colors.dart';
-import 'package:e_commerce_task/widgets/text_widget.dart';
+import 'package:e_commerce_task/core/contants/colors.dart';
+import 'package:e_commerce_task/core/utils/text_styles.dart';
 import 'package:flutter/material.dart';
 
 void showLoadingDialog(BuildContext context, String msg) {

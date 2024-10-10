@@ -1,4 +1,4 @@
-import 'package:e_commerce_task/utils/firebase_auth_exception_handler.dart';
+import 'package:e_commerce_task/core/utils/firebase_auth_exception_handler.dart';
 import 'package:e_commerce_task/views/auth/logIn/login_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';

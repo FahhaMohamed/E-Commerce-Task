@@ -1,9 +1,9 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:e_commerce_task/contants/colors.dart';
-import 'package:e_commerce_task/contants/global.dart';
+import 'package:e_commerce_task/core/contants/colors.dart';
+import 'package:e_commerce_task/core/contants/global.dart';
 import 'package:e_commerce_task/views/detail/widgets/image_widget.dart';
-import 'package:e_commerce_task/widgets/carousal_shimmer.dart';
+import 'package:e_commerce_task/views/detail/widgets/carousal_shimmer.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
